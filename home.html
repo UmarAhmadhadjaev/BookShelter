@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>BookShelter</title>
+</head>
+
+<body style="margin-top: 73px;">
+
+    <header class="header position-fixed bg-white">
+        <div class="container-fluid header-container">
+            <!-- Header logo -->
+            <div class="header-logo">
+                <a href="./home.html" class="d-flex header-link">
+                    <img class="header-logo-img" src="./img/logo.png" alt="Library site logo" width="54" height="44">
+                   <h1 class="header-logo-title m-0 text-dark">BookShelter</h1>
+                </a>
+            </div>
+
+            <!-- SITE SEARCH -->
+            <div class="site__search">
+                <input class="header-search-inp" type="text" placeholder="Search books">
+            </div>
+<!-- admin panel -->
+<div class="header-admin">
+    <a href="./login.html"><button class="btn btn-danger header-admin-btn">Admin</button></a>
+</div>
+<!-- admin panel end -->
+            <!-- SITE REGISTER LOGOUT -->
+            <div class="header-logout">
+                <button class="btn btn-primary header-logout-btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main d-flex flex-column flex-grow-1">
+
+        <!-- SITE HERO -->
+        <section class="hero" style="z-index: 1;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3"></div>
+
+                    <div class="col-9 d-flex align-items-center justify-content-between">
+                        <p class="hero-result m-0">
+                            Showing <span class="book__results"></span> Result(s)
+                        </p>
+                        <button class="btn hero-order text-light">📅 Order by newest</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- slider -->
+    <main>
+        <div
+          id="carouselExampleDark"
+          class="carousel carousel-dark slide mx-auto"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+              <img
+                src=".//img/rijksmuseum-library-amsterdam-sep-view-research-largest-public-art-history-netherlands-131081429.jpg"
+                class="d-block w-100"
+                alt="library"
+              />
+              <div class="carousel-caption d-none d-md-block"></div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img
+                src=".//img/public-library-canada-inside-view-reading-room-new-modern-toronto-174985741.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block"></div>
+            </div>
+            <div class="carousel-item">
+              <img src=".//img/IMG_9887-800x450.jpg" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block"></div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </main>
+      <!-- slider end -->
+        <!-- SITE BODY BOOKMARKS AND BOOK CARDS -->
+        <section class="site-body books">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- BOOKMARKS -->
+                    <div class="col-3 bookmark">
+                        <h2 class="bookmark-head-title">Bookmarks</h2>
+
+                        <p class="bookmark-subtitle">If you don’t like to read, you haven’t found the right book</p>
+
+                        <ul class="bookmark__list list-unstyled m-0 p-0">
+
+                        </ul>
+                    </div>
+
+                    <!-- BOOK CARDS -->
+                    <div class="col-9 d-flex flex-column flex-wrap justify-content-between">
+                        <div class="book-cards d-flex flex-wrap justify-content-between">
+
+                        </div>
+                        <div class="paginations mx-auto mb-5 d-flex">
+                            <button class="btn-pagination prev__btn fs-4">
+                                <</button>
+                            <div class="pagination">
+
+                            </div>
+                            <button class="btn-pagination next__btn fs-4">></button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOKMARKS CARD TEMPLATE -->
+        <template class="template">
+            <div class="card" style="width: 300px;padding: 13px 15px;">
+
+                <div class="card-images">
+                    <img class="card-img" alt="..." width="201" height="202">
+                </div>
+
+                <div class="card-body p-0">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-desc">David M. Beazley</p>
+                    <p class="card-year">2009</p>
+
+                    <div>
+                        <div class="d-flex bd-highlight mb-2">
+                            <button class="btn bookmark-add-btn flex-grow-1 me-1">Bookmark</button>
+                            <button class="btn bookmark-more-btn flex-grow-1 ms-1" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">More Info</button>
+                            <div class="modal__body"></div>
+                        </div>
+
+                        <div>
+                            <a class="btn text-white book-read-btn" type="button">
+                                Read
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- OFFCANVAS MODAL -->
+        <div>
+            <div class="bg__modal position-fixed"></div>
+            <div class="modal none sticky-top position-fixed">
+                <div>
+                    <div class="modal-title"></div>
+
+                </div>
+
+                <div class="modal-about mb-4">
+                    <div class="mx-auto text-center">
+                        <img class="modal-img" src="" width="230" height="300"></img>
+                    </div>
+                    <div class="modal-desc"></div>
+                    <div class="d-flex mb-1 align-items-center">
+                        <h4 class="modal-middle-element">Author:</h4>
+                        <div class="modal-author d-flex"></div>
+                    </div>
+                    <div class="d-flex mb-1 align-items-center">
+                        <h4 class="modal-middle-element">Published: </h4>
+                        <p class="modal__published modal-abouts"></p>
+                    </div>
+                    <div class="d-flex mb-1 align-items-center">
+                        <h4 class="modal-middle-element">Publishers:</h4>
+                        <p class="modal__publishers modal-abouts"></p>
+                    </div>
+                    <div class="d-flex mb-1 align-items-center">
+                        <h4 class="modal-middle-element">Categories:</h4>
+                        <p class="modal__categories modal-abouts"></p>
+                    </div>
+                    <div class="d-flex mb-1 align-items-center">
+                        <h4 class="modal-middle-element">Pages Count:</h4>
+                        <p class="modal__page modal-abouts"></p>
+                    </div>
+                    <div class="d-flex flex-grow-1"></div>
+                    <div class="d-flex">
+                        <a class="btn text-white modal-read" target="_blank">
+                            Read
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="./js/logout.js"></script>
+<script src="./js/script.js"></script>
+</html>
